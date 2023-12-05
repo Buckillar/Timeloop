@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Travel Story</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    #story-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="story-container">
+  <h1>Time Travel Story</h1>
+  <p id="story-text"></p>
+  <img id="story-image" alt="Story Image">
+  <button onclick="showNextPart()">Next Part</button>
+</div>
+
+<script>
+  let story;
+  let currentPartIndex = 0;
+
+  async function fetchData() {
+    try {
+      const response = await fetch('../story.json');
+      const data = await response.json();
+      return data.story;
+    } catch (error) {
+      console.error('Error fetching the story:', error);
+      return [];
+    }
+  }
+
+  // Use an immediately-invoked async function to wait for the data before executing the rest of the script
+  (async () => {
+    story = await fetchData();
+    showNextPart(); // Display the first part after loading the data
+  })();
+/*
+  function showNextPart() {
+    const storyText = document.getElementById('story-text');
+    const storyImage = document.getElementById('story-image');
+
+    if (currentPartIndex < story.length) {
+      storyText.textContent = story[currentPartIndex].text;
+      storyImage.src = story[currentPartIndex].picture;
+      currentPartIndex++;
+    } else {
+      storyText.textContent = "The end of the story.";
+      storyImage.src = "";
+    }
+  }
+*/
+function addTypewriterEffect(element, text) {
+      element.textContent = ''; // Clear existing content
+      element.classList.add("typewriter-text");
+      element.textContent = text;
+    }
+
+    function showNextPart() {
+      const storyText = document.getElementById('story-text');
+      const storyImage = document.getElementById('story-image');
+
+      if (currentPartIndex < story.length) {
+        addTypewriterEffect(storyText, story[currentPartIndex].text);
+        storyImage.src = story[currentPartIndex].picture;
+        currentPartIndex++;
+      } else {
+        addTypewriterEffect(storyText, "The end of the story.");
+        storyImage.src = "";
+      }
+    }
+</script>
+
+</body>
+</html>

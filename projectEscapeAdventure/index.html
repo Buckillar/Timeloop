@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+    
+    <!-- Google Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+    <!-- Javascript -->
+    <script type="module" src="game.js"></script>
+    <title>Looped through</title>
+</head>
+<body>
+
+    <div class="homepage is-open" id="btn-01">
+        <div class="homepage-contain">
+            <div class="homepage-start">
+                <img class="title-img" src="images/title-img.png">
+                <p>WARNING: Going through this door will take you on a journey you may not escape</p>
+                <a homepage-btn="#btn-01" href="#!">OPEN DOOR!</a> <!--   <a href="#!" homepage-btn="#btn-01">Link To Show Drawer</a> -->
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div id="introStory" class="intro hidden">
+        <div id="story-container">
+            <h1>How it begins...</h1>
+            <p class="center-text"><img id="story-image" alt="Story Image"></p>
+            <p id="story-text"></p>
+            <p class="center-text">
+                <button class="intro-btn" id="introStory-Btn">Next</button>
+                <button class="intro-btn hidden" id="introStoryComplete-Btn">Start journey</button>
+            </p>    
+        </div>
+    </div>
+
+    <div id="menu" class="intro">
+        <h1><span class="material-symbols-outlined">settings</span> Menu</h1>
+        <p class="center-text">
+            <button class="intro-btn" id="menu-introStory-btn">Start Game - Story</button>
+        </p>
+        <p class="center-text">
+            <button class="intro-btn" id="menu-intro-btn">Start Game - No Intro</button>
+        </p> 
+        <p class="center-text">
+            <button class="intro-btn" id="menu-score-btn" >Top Results</button>
+        </p>   
+    </div>
+
+
+    <div id="resultsScreen" class="intro hidden">
+        <h1><span class="material-symbols-outlined">joystick</span> Top Scores!</h1>
+        <div id="results"></div>
+        <button class="intro-btn" id="score-menu-btn">Back to Menu</button>
+    </div>
+
+
+
+    <div id="intro" class="intro hidden">
+        <h1><span class="material-symbols-outlined">warning</span> Alert!</h1>
+        <p>There has been an attack! The <b class="redacted">***Redacted***</b> has had a containment failure</p>
+        <p>Employee on site Dr <b class="redacted">***Redacted***</b> , has been named as the perpetrator</p>
+        <p>You've been put into an impossible situation, with no way out except to go through. To make it through you will have to make sure you complete <b class="redacted">***Redacted***</b>
+            before the time stream collapses on you!</p>
+        <p>Good luck</p>
+        <p class="center-text"><button id="intro-btn" class="intro-btn">Enter</button></p>
+    </div>
+
+
+    <div id="winScreen" class="intro hidden">
+        <h1>Well Done...</h1>
+        <p class="center-text"><img src="images/winImage.jpg" id="win-image" alt="Story Image"></p>
+        <p>A shadowy figure appears out of nowhere</p>
+        <p>"You stopped the time collapses like the people before you... 
+            Ahh like all the others you have the same look of surprise. This will happen again agent <span id="playerName"></span>."</p>
+        <p>"I hope the next agent will be just as useful as yourself"</p>
+        <p>"You can compare how well you have done, if you wish"</p>
+        <p class="center-text"><button id="win-score-btn" class="intro-btn">Compare</button></p>
+    </div>
+
+
+    <div id="game" class="container hidden">
+        <div id="timerbox"><span id="timer">03:00</span>
+            <br>
+            <span class="material-symbols-outlined">skull</span> <span id="collapseCount">0</span>
+        </div>
+        <div style="text-align: center" ><img id="graphic" width="450px" height="450px"></div>
+        <div id="text">text</div>
+        <div id="option-buttons" class="btn-grid">
+            <button class="btn">Option 1</button>
+            <button class="btn">Option 2</button>
+            <button class="btn">Option 3</button>
+            <button class="btn">Option 4</button>
+        </div>
+    </div>
+
+
+
+
+    
+
+</body>
+</html>

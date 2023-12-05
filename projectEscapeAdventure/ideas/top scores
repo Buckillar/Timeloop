@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Scores</title>
+</head>
+<body>
+<h1>Top Scores</h1>
+<div id="results">
+
+</div>
+<div>
+    <p>Well Done</p>
+</div>
+
+<button onclick="TopScore.addNewScore()">New Score</button>
+
+
+<script>
+    let collapseAmount = [1, 1, 1];
+    let scoreWin = 105;
+
+
+
+    let scorelist = document.getElementById("results")
+
+  class TopScore {
+    constructor(name, collapses, totalScore) {
+      this.name = name;
+      this.collapses = collapses;
+      this.totalScore = totalScore;
+    }
+
+    display() {
+      console.log(`Top Score: ${this.name} - Collapses: ${this.collapses} - Total Score: ${this.totalScore}`);
+    }
+
+    static displayAll(topScores) {
+      console.log('All Top Scores:');
+      topScores.forEach((score) => {
+        score.display();
+      });
+    }
+
+    static displayInHTML(topScores) {
+      // Sort the topScores array by the totalScore in ascending order
+      const sortedTopScores = topScores.slice().sort((a, b) => a.totalScore - b.totalScore);
+
+      const ol = document.createElement('ol');
+
+      sortedTopScores.forEach((score) => {
+        const li = document.createElement('li');
+        li.textContent = `Top Score: ${score.name} - Collapses: ${score.collapses} - Total Score: ${score.totalScore}`;
+        ol.appendChild(li);
+      });
+
+      scorelist.appendChild(ol);
+    }
+
+    static addNewScore() {
+      const name = prompt('Enter your name:');
+      const collapses = parseInt(collapseAmount.length);
+      const totalScore = parseInt(scoreWin);
+
+      const newScore = new TopScore(name, collapses, totalScore);
+      
+      // Find the correct position to insert the new score based on total score
+      const index = allTopScores.findIndex(score => score.totalScore > totalScore);
+      if (index === -1) {
+        // If not found, add the new score to the end of the array
+        allTopScores.push(newScore);
+      } else {
+        // Otherwise, insert the new score at the found index
+        allTopScores.splice(index, 0, newScore);
+      }
+
+      // Clear the existing list and display the updated list
+      scorelist.innerHTML = '';
+      TopScore.displayAll(allTopScores);
+      TopScore.displayInHTML(allTopScores);
+    }
+  }
+
+  // Example usage:
+  const player1 = new TopScore('Player1', 5, 100);
+  const player2 = new TopScore('Player2', 3, 150);
+  const player3 = new TopScore('Player3', 7, 120);
+
+  // Create an array of top scores
+  const allTopScores = [player1, player2, player3];
+
+  // Display all top scores in the console
+  TopScore.displayAll(allTopScores);
+
+  // Display all top scores in an ordered HTML list
+  TopScore.displayInHTML(allTopScores);
+
+
+</script>
+
+</body>
+</html>

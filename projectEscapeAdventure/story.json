@@ -1,0 +1,34 @@
+{
+  "story": [
+    {
+      "part": 0,
+      "text": "Dr. Victor Malachi, a brilliant scientist, had dedicated his life to unraveling the mysteries of time travel for his employer the US Government. In a secret underground laboratory, hidden away from the prying eyes of the world, he toiled day and night to perfect his creation, a groundbreaking time machine.",
+      "picture": "images/intro1.jpg"
+    },
+    {
+      "part": 1,
+      "text": "As Dr. Malachi conducted experiments becoming more drawn into the idea of power his discoveries could wield and disregarding the warnings of his colleagues, he stumbled upon a dark secret: a rift in the fabric of time itself. Instead of heeding caution, he saw this as an opportunity to harness unimaginable power.",
+      "picture": "images/intro2.jpg"
+    },
+    {
+      "part": 2,
+      "text": "With a maniacal glint in his eye, he modified the time machine to exploit the rift's energy, intending to control time itself.",
+      "picture": "images/intro3.jpg"
+    },
+    {
+      "part": 3,
+      "text": "As he activated the modified device, a surge of energy coursed through the laboratory. The air crackled with an ominous electricity as the time machine whirred to life. ",
+      "picture": "images/intro4.jpg"
+    },
+    {
+      "part": 4,
+      "text": "As the time machine reached its peak, the rift expanded uncontrollably, creating a chaotic temporal storm. Reality itself began to warp and twist, tearing at the seams.",
+      "picture": "images/intro5.jpg"
+    },
+    {
+      "part": 5,
+      "text": " Dr. Malachi's walks towards a force he had unleashed far beyond his comprehension. The temporal storm grew more intense, folding in on itself. The laboratory started to crumble around the scientists, and time itself seemed to fracture.",
+      "picture": "images/intro6.jpg"
+    }
+  ]
+}

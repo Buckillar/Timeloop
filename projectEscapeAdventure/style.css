@@ -1,0 +1,291 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Tektur', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ccc;
+    background-image: url("images/Circuit.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*misc */ 
+.hidden {
+    display: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Google icon style */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 32;
+  color:red; 
+  font-size: 36px !important;
+  vertical-align: -7px;
+}
+
+/* Intro Story Image */ 
+
+#story-image {
+    width:350px;
+    height:350px;
+
+}
+
+#timerbox {
+    font-family: 'Stick No Bills', sans-serif !important;
+    background-color: rgb(6, 20, 8);
+    color:#14f734;
+    font-size: 2.0em;
+    font-weight: bold;
+    width:140px;
+    padding: 10px;
+    text-align: center;
+    border: grey 6px ridge;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+#timer {
+    font-family: inherit;
+}
+
+#collapseCount {
+    font-family: inherit;
+}
+
+/* Intro and redacted */
+.intro {
+    width: 800px;
+    max-width: 80%;
+    background-color: black;
+    color:#018dff;
+    padding:25px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.intro p {
+    line-height: 28px;
+}
+
+.redacted {
+    padding:5px;
+    background-color: #018dff;
+    color: black;
+}
+
+.intro-btn {
+    border:none;
+    border-left: solid 1px #000;
+    padding: 8px 12px;
+    font-weight: 700;
+    text-decoration: none;
+    background-size: 0% 100%;
+    background-image: linear-gradient(#018dff, #018dff);
+    background-repeat: no-repeat;
+    transition: all 0.5s linear;
+    color: black;
+} 
+
+.intro-btn:hover {
+    background-size: 100% 100%;
+    color: white;
+    transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);    
+}
+/*Win Screen + Score results */
+#winScreen {
+    font-size: 1.2em;
+}
+#winScreen img {
+    width: 350px;
+    height: 350px;
+}
+#results {
+    font-size: 1.7em;
+}
+
+/* Game mechanics */
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: rgba(31, 119, 247, 0.8);
+    border: 1px solid rgba(31, 119, 247, 0.3);
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: #aaa;
+}
+
+.homepage {
+    margin:0px;
+    padding: 0px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #0c1f3f;
+    color: white;
+    
+    /* Initial transforms */
+    opacity: 1;
+    transform: translateY(-100%);
+    transition: 1.5s ease;
+  }
+  
+.homepage.is-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.homepage-contain {
+    margin: 0px;  
+    height: 100vh;  
+    background-image: url("images/home-page-blastdoor.jpeg");
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
+.homepage-start {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    background-color: black;
+    border-radius:10px;
+    padding:10px;
+    color: #3aeb34;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.7); 
+}
+
+/* Home page button with glitch animations  */ 
+
+.homepage-start a, .homepage-start a::after  {
+    padding: 16px 20px;
+    font-size: 18px;
+    background: linear-gradient(45deg, transparent 5%, #018dff 5%);
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 3px;
+    line-height: 1;
+    box-shadow: 6px 0px 0px #11ecfc;
+    outline: transparent;
+    position: relative;
+}
+.homepage-start a::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    content: "Open Door";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #3aeb34 5%);
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #3aeb34;
+    clip-path: var(--slice-0);
+}
+.homepage-start a:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+@keyframes glitch {
+    0% {
+     clip-path: var(--slice-1);
+     transform: translate(-20px, -10px);
+    }
+   
+    10% {
+     clip-path: var(--slice-3);
+     transform: translate(10px, 10px);
+    }
+   
+    20% {
+     clip-path: var(--slice-1);
+     transform: translate(-10px, 10px);
+    }
+   
+    30% {
+     clip-path: var(--slice-3);
+     transform: translate(0px, 5px);
+    }
+   
+    40% {
+     clip-path: var(--slice-2);
+     transform: translate(-5px, 0px);
+    }
+   
+    50% {
+     clip-path: var(--slice-3);
+     transform: translate(5px, 0px);
+    }
+   
+    60% {
+     clip-path: var(--slice-4);
+     transform: translate(5px, 10px);
+    }
+   
+    70% {
+     clip-path: var(--slice-2);
+     transform: translate(-10px, 10px);
+    }
+   
+    80% {
+     clip-path: var(--slice-5);
+     transform: translate(20px, -10px);
+    }
+   
+    90% {
+     clip-path: var(--slice-1);
+     transform: translate(-10px, 0px);
+    }
+   
+    100% {
+     clip-path: var(--slice-1);
+     transform: translate(0);
+    }
+   }

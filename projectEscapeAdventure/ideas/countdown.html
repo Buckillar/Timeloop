@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #timer {
+      font-size: 2em;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div id="timer">03:00</div>
+<button onclick="startTimer()">Start</button>
+<button onclick="stopTimer()">Stop</button>
+<button onclick="resetTimer()">Reset</button>
+<button onclick="resetGoTimer()">Reset + go!</button>
+
+<script>
+  //Array for counting Time Collapses  
+  let collapseAmount = [];  
+
+  let countdownInterval;
+  const initialCountdownTime = 3 * 60 * 1000; // 3 minutes in milliseconds
+  //const initialCountdownTime = 5 * 1000; // 5 seconds in milliseconds for testing collapse
+  let countDownDate = new Date().getTime() + initialCountdownTime;
+
+  function startTimer() {
+    countdownInterval = setInterval(updateTimer, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(countdownInterval);
+    //document.getElementById("timer").innerHTML = "Timer Stopped";
+  }
+
+  function resetTimer() {
+    clearInterval(countdownInterval);
+    countDownDate = new Date().getTime() + initialCountdownTime;
+    updateTimer();
+  }
+  
+  function resetGoTimer(){
+    resetTimer();
+    startTimer();
+  }
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = `${minutes.toString().padStart(2, '0')}:
+                                                   ${seconds.toString().padStart(2, '0')}`;
+
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      collapseAmount.push(1);
+      document.getElementById("timer").innerHTML = "EXPIRED";
+      console.log(collapseAmount.length)
+    }
+  }
+</script>
+
+</body>
+</html>

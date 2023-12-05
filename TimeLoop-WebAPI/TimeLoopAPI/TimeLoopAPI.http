@@ -1,0 +1,6 @@
+@TimeLoopAPI_HostAddress = http://localhost:5116
+
+GET {{TimeLoopAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

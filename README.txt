@@ -15,6 +15,12 @@ Things to be fixed -
     * add music / sound to the game to give atmosphere
     * create different paths (times) to be used based on random load
 
+11.12.23 
+Added new line of code to make work on decoded website 
+Added story still needs to be checked for bugs found some on some playtesting but may require more testing
+Added half images required need to generate and add in the rest
+Deleted old image files no longer being used
+
 05.12.23
 Added to the JavaScript new line which pulls intro story data from a WEBAPI Local host - https://github.com/Buckillar/Timeloop.git
 Can be changed 

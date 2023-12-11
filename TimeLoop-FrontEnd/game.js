@@ -28,6 +28,7 @@ async function fetchData() {
   try {
   // const response = await fetch('story.json'); // uses JSON  
    const response = await fetch('http://localhost:5116/api/story', fetchOptions);   // uses WEBAPI
+  // const response = await fetch('http://fb02.decoded.com:5116/api/story', fetchOptions);   // uses Decoded.com WEBAPI
 
     const data = await response.json();
     return data.story;
@@ -243,12 +244,12 @@ const textNodes = [
     options: [
       {
         text: 'Leave electricity alone, go through door',
-        setState: { electric: true },
+        setState: { electric: true, noElectric:false },
         nextText: 3
       },
       {
         text: 'Turn off electricity and then go through door',
-        setState: { noElectric: true },
+        setState: { noElectric: true, electric:false },
         nextText: 4
       }
     ]
@@ -297,6 +298,7 @@ const textNodes = [
   {
     id: 5,
     text: 'So... you fancied cleaning something? Get on with the mission! <br> Ok while you are here you have a scout around, nope there is nothing useful, so you have the choice of the two other doors',
+    picture: "images/game06.jpg",
     options: [
       {
         text: 'Go through service corridor exit!',
@@ -311,6 +313,7 @@ const textNodes = [
   {
     id: 6,
     text: 'Entering Lab offices you see can see the mess the time collapses have had. Nothing has stood the test of time except an old relic in the corner Dr Malachi had labelled with a do not touch sticker. Could this be something? <br> You hear strange noises through the open door into main atrium.. Have you time to waste?',
+    picture: "images/game07.jpg",
     options: [
       {
         text: 'Play on the old Atari',
@@ -320,6 +323,7 @@ const textNodes = [
       {
         text: 'Play on the old Atari',
         requiredState: (currentState) => currentState.electric,
+        setState: { password: true },
         nextText: 8
       },
       {
@@ -330,85 +334,258 @@ const textNodes = [
   },
   {
     id: 7,
-    text: 'While exploring the fortress you come across a horrible monster in your path.',
+    text: "The computer has no electricity as you turned off the electric to the whole of the lab office's electricity supply earlier",
+    picture: "images/game07.jpg",
     options: [
       {
-        text: 'Try to run',
-        nextText: 8
-      },
-      {
-        text: 'Attack it with your gun',
-        requiredState: (currentState) => currentState.sword,
+        text: 'Move on to the Atrium',
         nextText: 9
-      },
-      {
-        text: 'Hide behind your armour',
-        requiredState: (currentState) => currentState.shield,
-        nextText: 10
-      },
-      {
-        text: 'Throw the toothpaste at it',
-        requiredState: (currentState) => currentState.toothpaste,
-        nextText: 11
-      },
-      {
-        text: 'Pay it off with coins',
-        requiredState: (currentState) => currentState.coins,
-        nextText: 12
       }
     ]
   },
   {
     id: 8,
-    text: 'Your attempts to run are in vain and the monster easily catches.',
+    text: 'The Atari "springs" to life. No No No! Its loaded BASIC. You restart the computer holding down OPTION button, you look in the only 5.25" disks directory... File named useful appears, you load it up. <br> Its got a list of books, and at the bottom, a line saying MyPassword: "MrMittens01!"',
+    picture: "images/game08.jpg",
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Move on to the Atrium',
+
+        nextText: 9
       }
     ]
   },
   {
     id: 9,
-    text: 'You foolishly thought this monster could be slain with a single bullet.',
+    text: 'The atrium is not an atrium in the traditional sense but more of a safe lock between the lab offices and the labs. The noise is getting louder, its coming from the labs but the doors to the lab are sealed shut. ',
+    picture: "images/game09.jpg",
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Use the ID Card you found to open the door',
+        requiredState: (currentState) => currentState.idCard,
+        nextText: 10
+      },
+      {
+        text: 'Bang on the door!',
+        nextText: 11
       }
     ]
   },
   {
     id: 10,
-    text: 'The monster laughed as you hid behind your armour and ate you.',
+    text: 'The door opened, things are looking up. Even better there is a map of the labs, time to press on (excuse the pun).',
+    picture: "images/game09.jpg",
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: "Go to Malachi's lab",
+        nextText: 17
       }
     ]
   },
   {
     id: 11,
-    text: 'You squirted toothpaste at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing your victory you decide to claim this fortress as yours and live out the rest of your days there.',
+    text: 'Banging on the door was never going to work, an inspection around and you find a man sized air vent! If you were a fictional vest wearing NYPD cop saving a certain skyscraper from some terrorists you would of spotted this first and wouldnt of hurt your hand!',
+    picture: "images/game09.jpg",
     options: [
       {
-        text: 'Congratulations. ',
+        text: 'Climb into the vent',
+        nextText: 12
+      },
+      {
+        text: "Keep banging on the door",
+        nextText: 802
+      }
+
+    ]
+  },
+  {
+    id: 12,
+    text: "This vent is seemingly going on forever... 'Come out to the coast, we'll get together, have a few laughs' is the muttering of that NYPD cop you fondly think of  as you make your way further down the vent. The vent turns into 3 paths...",
+    picture: "images/game10.jpg",
+    options: [
+      {
+        text: 'Climb down vertical vent',
+        nextText: 14
+      },
+      {
+        text: 'Take the left vent',
+        nextText: 14
+      },
+      {
+        text: 'Climb over the vertical down vent and continue straight',
+        nextText: 803
+      }
+    ]
+  },
+  {
+    id: 14,
+    text: "Climbing down the vent was a bad move, the labs were all on the floor you were on. <br> However the vent exits into some accountant's office. This must of been someone important as there is fake city backdrop!",
+    picture: "images/game11.jpg",
+    options: [
+      {
+        text: 'Exit the accountants office',
+        nextText: 15
+      }
+    ]
+  },  
+  {
+    id: 15,
+    text: "You need to get back up to the laboratories, there is a sign with stairs written on it next to some elevators... What a choice!",
+    picture: "images/game10.jpg",
+    options: [
+      {
+        text: 'Use stairs',
+        nextText: 16
+      },
+      {
+        text: 'Use Elevator',
+        nextText: 804
+      }
+    ]
+  },
+  {
+    id: 16,
+    text: 'Ahh the safe choice.. as you make your way back up the stairs towards the labs you, a temporal anomaly opens up above you in the ceiling, you hear it crackle and disappear.. <br> Moving through the door to the labs, there is a map on near by wall',
+    picture: "images/game09.jpg",
+    options: [
+      {
+        text: "Go to Malachi's lab",
+        nextText: 17
+      }
+    ]
+  },
+  {
+    id: 17,
+    text: 'Malachi is long gone but the device causing all the issues is here! <br> You can turn it off if you can guess the password to the terminal',
+    picture: "images/game09.jpg",
+    options: [
+      {
+        text: "Enter MrMittens01!",
+        requiredState: (currentState) => currentState.password,
+        nextText: 18
+      },
+      {
+        text: "Hit it with a nearby hammer",
+        nextText: 805
+      },
+      {
+        text: "Guess the Password",
+        nextText: 19
+      },
+      {
+        text: "Look around for some clues",
+        nextText: 20
+      }
+    ]
+  },
+  {
+    id: 18,
+    text: 'Stopping the machine will stop the temporal anomalies and the labs will look like nothing ever happened. No one knows what happened to Malachi but your job is nearly over you just have to press the stop button!',
+    picture: "images/game09.jpg",
+    options: [
+      {
+        text: "Use the Stop button",
         nextText: -2
       }
     ]
   },
   {
-    id: 12,
-    text: 'It eats the coins followed by you',
+    id: 19,
+    text: 'Guessing the password didnt help one bit. Malachi has obviously been keeping up to date with security passwords tips.',
+    picture: "images/game09.jpg",
     options: [
       {
-        text: 'Congratulations. Play Again.',
-        setState: { coins: false },
+        text: "Enter MrMittens01!",
+        requiredState: (currentState) => currentState.password,
+        nextText: 18
+      },
+      {
+        text: "Hit it with a nearby hammer",
+        nextText: 805
+      },
+      {
+        text: "Look around for some clues",
+        nextText: 20
+      }
+    ]
+  },
+  {
+    id: 20,
+    text: 'You look around and see a clutter of notes but one stands out. The Atari has the key... Time is running out the machine starts hissing..',
+    picture: "images/game09.jpg",
+    options: [
+      {
+        text: "Enter MrMittens01!",
+        requiredState: (currentState) => currentState.password,
+        nextText: 18
+      },
+      {
+        text: "Go back to the Atari",
+        nextText: 806
+      }
+    ]
+  },
+  {
+    id: 801,
+    text: 'As you step outside a time vortex above you crackles, you look up to see a flash of lightning and everything goes dark',
+    options: [
+      {
+        text: 'Enter the darkness!',
         nextText: -1
       }
     ]
   },
+  {
+    id: 802,
+    text: "As you become insistant the door should open from you banging on it, an anomaly opens and sucks you though. The last thing you see is inside of a T-Rex's mouth as he makes you dinner!",
+    options: [
+      {
+        text: 'Enter the darkness!',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 803,
+    text: 'The gap is just too large and you lose your grip, as you fall head first down the vent you realise this was a mistake. The last thing you remember is the crunch.',
+    options: [
+      {
+        text: 'Enter the darkness!',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 804,
+    text: 'Someone forgot their computer based training on health and safety in the work place. Never get into an elevator while the building is being ripped apart by temporal events... The elevator to its credit starts to creep up before an anomaly decends it into darkness with you in it...  ',
+    options: [
+      {
+        text: 'Enter the darkness!',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 805,
+    text: 'Hitting it with a hammer (HIWAH) is one of the more ridiculous things you could of done. You are travelled forward in time to a time Earth no longer exists, just space...',
+    options: [
+      {
+        text: 'Enter the darkness!',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 806,
+    text: 'Its too late for that! The last you hear is the machine implode sucking you into the black',
+    options: [
+      {
+        text: 'Enter the darkness!',
+        nextText: -1
+      }
+    ]
+  },
+
   {
     id: 999,
     text: 'Things feel the same but different as your day restarts in this hell!',

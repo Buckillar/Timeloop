@@ -25,6 +25,11 @@ body {
 .center-text {
     text-align: center;
 }
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 10px; /* change this to whatever height you want it */
+}
 
 /* Google icon style */
 
@@ -174,6 +179,7 @@ body {
 .homepage-contain {
     margin: 0px;  
     height: 100vh;  
+    background-color: #000;
     background-image: url("images/home-page-blastdoor.jpeg");
     background-repeat: no-repeat;
     background-size:auto;
@@ -193,7 +199,198 @@ body {
     padding:10px;
     color: #3aeb34;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.7); 
+    height: 230px;
 }
+/* GLitchy title rather than image*/ 
+
+#title-text {
+    margin-bottom: 30px;
+}
+
+#title-text h2 {
+    text-align: center;
+    color: #d9fff9;
+    font-size: 80px;
+    letter-spacing: 6px;
+    font-weight: 300;
+    margin: 0;
+    line-height: 0;
+    animation: glitch1 3.5s infinite;
+}
+
+#title-text h2:nth-child(2) {
+    color: #0ef0e1;
+    animation: glitch2 2.5s infinite;
+}
+
+#title-text h2:nth-child(3) {
+    color: #ff94eb;
+    animation: glitch3 2.5s infinite;
+  }
+  @keyframes glitch1 {
+    0% {
+      transform: none;
+      opacity: 1;
+    }
+    8% {
+      transform: skew(-0.5deg, -0.9deg);
+      opacity: 0.75;
+    }
+    10% {
+      transform: none;
+      opacity: 1;
+    }
+    28% {
+      transform: none;
+      opacity: 1;
+    }
+    30% {
+      transform: skew(0.8deg, -0.1deg);
+      opacity: 0.75;
+    }
+    33% {
+      transform: none;
+      opacity: 1;
+    }
+    45% {
+      transform: none;
+      opacity: 1;
+    }
+    55% {
+      transform: skew(-1deg, 0.2deg);
+      opacity: 0.75;
+    }
+    60% {
+      transform: none;
+      opacity: 1;
+    }
+    72% {
+      transform: none;
+      opacity: 1;
+    }
+    78% {
+      transform: skew(0.4deg, 1deg);
+      opacity: 0.75;
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes glitch2 {
+    0% {
+      transform: none;
+      opacity: 0.25;
+    }
+    8% {
+      transform: translate(-2px, -3px);
+      opacity: 0.5;
+    }
+    10% {
+      transform: none;
+      opacity: 0.25;
+    }
+    28% {
+      transform: none;
+      opacity: 0.25;
+    }
+    30% {
+      transform: translate(-5px, -2px);
+      opacity: 0.5;
+    }
+    33% {
+      transform: none;
+      opacity: 0.25;
+    }
+    45% {
+      transform: none;
+      opacity: 0.25;
+    }
+    55% {
+      transform: translate(-5px, -1px);
+      opacity: 0.5;
+    }
+    60% {
+      transform: none;
+      opacity: 0.25;
+    }
+    72% {
+      transform: none;
+      opacity: 0.25;
+    }
+    78% {
+      transform: translate(-2px, -6px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: none;
+      opacity: 0.25;
+    }
+    100% {
+      transform: none;
+      opacity: 0.25;
+    }
+  }
+  @keyframes glitch3 {
+    0% {
+      transform: none;
+      opacity: 0.25;
+    }
+    8% {
+      transform: translate(2px, 3px);
+      opacity: 0.5;
+    }
+    10% {
+      transform: none;
+      opacity: 0.25;
+    }
+    28% {
+      transform: none;
+      opacity: 0.25;
+    }
+    30% {
+      transform: translate(5px, 2px);
+      opacity: 0.5;
+    }
+    33% {
+      transform: none;
+      opacity: 0.25;
+    }
+    45% {
+      transform: none;
+      opacity: 0.25;
+    }
+    55% {
+      transform: translate(5px, 1px);
+      opacity: 0.5;
+    }
+    60% {
+      transform: none;
+      opacity: 0.25;
+    }
+    72% {
+      transform: none;
+      opacity: 0.25;
+    }
+    78% {
+      transform: translate(2px, 6px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: none;
+      opacity: 0.25;
+    }
+    100% {
+      transform: none;
+      opacity: 0.25;
+    }
+  }
+
+
 
 /* Home page button with glitch animations  */ 
 

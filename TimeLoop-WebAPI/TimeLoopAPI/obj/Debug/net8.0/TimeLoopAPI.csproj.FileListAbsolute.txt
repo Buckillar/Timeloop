@@ -31,3 +31,4 @@ C:\Code\Timeloop\TimeLoop-WebAPI\TimeLoopAPI\obj\Debug\net8.0\refint\TimeLoopAPI
 C:\Code\Timeloop\TimeLoop-WebAPI\TimeLoopAPI\obj\Debug\net8.0\TimeLoopAPI.pdb
 C:\Code\Timeloop\TimeLoop-WebAPI\TimeLoopAPI\obj\Debug\net8.0\TimeLoopAPI.genruntimeconfig.cache
 C:\Code\Timeloop\TimeLoop-WebAPI\TimeLoopAPI\obj\Debug\net8.0\ref\TimeLoopAPI.dll
+C:\Code\Timeloop\TimeLoop-WebAPI\TimeLoopAPI\obj\Debug\net8.0\TimeLoopAPI.sourcelink.json

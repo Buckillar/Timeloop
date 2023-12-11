@@ -181,7 +181,7 @@ function winState(){
 
 function showTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-  textElement.innerText = textNode.text;
+  textElement.innerHTML = textNode.text;
   imageElement.src = textNode.picture;
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild)
@@ -222,93 +222,109 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'You see a some toothpaste.',
-    picture: "images/Escape0.png",
+    text: 'Going through the temporal flux left you feeling fuzzy, with a sense of deja vu. Have you been here before? You look down to the digital watch. Time is counting down! <br> Looking around and getting your bearings you come across your first obstacle an electronically locked door. Looks like it needs some sort of pass-card! <br> You keep looking... Result a second already open door',
+    picture: "images/game01.jpg",
     options: [
       {
-        text: 'Take the toothpaste',
-        setState: { toothpaste: true },
+        text: 'Go through the already open door',
         nextText: 2
       },
       {
-        text: 'Leave the toothpaste',
-        nextText: 2
+        text: 'Use cheat to unlock door',
+        requiredState: (currentState) => currentState.cheat,
+        nextText: 901
       }
     ]
   },
   {
     id: 2,
-    text: 'You travel in search of answers to where you are from and across a person with bad breathe.',
-    picture: "images/Escape1.png",
+    text: 'The temporal anomalies are tearing base apart, hoping they are not spreading further you push on. <br> New room, new problems or are there? Actually this room is untouched! You see an electrical control panel on the wall and an unlocked door service corridor. <br> You can turn off the electricity to the corridor but it could make your journey a bit darker!',
+    picture: "images/game02.jpg",
     options: [
       {
-        text: 'Trade the toothpaste for a gun',
-        requiredState: (currentState) => currentState.toothpaste,
-        setState: { toothpaste: false, sword: true },
+        text: 'Leave electricity alone, go through door',
+        setState: { electric: true },
         nextText: 3
       },
       {
-        text: 'Trade the toothpaste for a armour',
-        requiredState: (currentState) => currentState.toothpaste,
-        setState: { toothpaste: false, shield: true },
-        nextText: 3
-      },
-      {
-        text: 'Ignore the person',
-        nextText: 3
-      },
-      {
-        text: 'Steal Coins',
-        setState: { coins: true },
-        nextText: 3
+        text: 'Turn off electricity and then go through door',
+        setState: { noElectric: true },
+        nextText: 4
       }
     ]
   },
   {
     id: 3,
-    text: 'After leaving the person you start to feel knackered and come across a village next to a cool looking fortress.',
+    text: 'Leaving the electricity on might of been the smart move! You can see clearly along the corridor, BINGO! A fire axe (also known to most as a key to all things called door! You approach the axe and just as you about to take it an anomaly withers it away like its 1000 years old! <br> Just keep moving past some boxes and round the corner! 3 doors are in front of you with convenient signs above each!',
+    picture: "images/game04.jpg",
     options: [
       {
-        text: 'Explore the fortress',
-        nextText: 4
+        text: 'Go through service corridor exit!',
+        nextText: 801
       },
       {
-        text: 'Find a room to sleep at in the village',
-        nextText: 5
-      },
-      {
-        text: 'Find a bush to sleep in',
+        text: 'Go to the Lab offices',
         nextText: 6
+      },
+      {
+        text: 'Go to janitors room',
+        nextText: 5
       }
     ]
   },
   {
     id: 4,
-    text: 'You are so tired that you fall asleep while exploring the fortrss and are killed by some terrible monster in your sleep.',
+    text: "The service corridor is eerily spooky and you can't see a damn thing.. Why did you switch off the electricity?! <br>  As you fumble down the corridor you stumble over some boxes. As you pick yourself up you see a glint of something highlighted by the emergancy lighting. Its an ID card! This might be useful later. You move on and round a corner to 3 doors with convenient signs above each",
+    picture: "images/game05.jpg",
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Go through service corridor exit!',
+        setState: { idCard: true },
+        nextText: 801
+      },
+      {
+        text: 'Go to the Lab offices',
+        setState: { idCard: true },
+        nextText: 6
+      },
+      {
+        text: 'Go to janitors room',
+        setState: { idCard: true },
+        nextText: 5
       }
     ]
   },
   {
     id: 5,
-    text: 'Without any money to buy a room you break into the nearest hotel and fall asleep. After a few hours of sleep the owner of the hotel finds you and has the police lock you in a cell.',
+    text: 'So... you fancied cleaning something? Get on with the mission! <br> Ok while you are here you have a scout around, nope there is nothing useful, so you have the choice of the two other doors',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Go through service corridor exit!',
+        nextText: 801
+      },
+      {
+        text: 'Go to the Lab offices',
+        nextText: 6
       }
     ]
   },
   {
     id: 6,
-    text: 'You wake up well rested and full of energy ready to explore the nearby fortress.',
+    text: 'Entering Lab offices you see can see the mess the time collapses have had. Nothing has stood the test of time except an old relic in the corner Dr Malachi had labelled with a do not touch sticker. Could this be something? <br> You hear strange noises through the open door into main atrium.. Have you time to waste?',
     options: [
       {
-        text: 'Explore the fortress',
+        text: 'Play on the old Atari',
+        requiredState: (currentState) => currentState.noElectric,
         nextText: 7
+      },
+      {
+        text: 'Play on the old Atari',
+        requiredState: (currentState) => currentState.electric,
+        nextText: 8
+      },
+      {
+        text: 'Move to the Atrium',
+        nextText: 9
       }
     ]
   },

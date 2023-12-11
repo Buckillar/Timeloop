@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeLoopAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5829028f6fb1cb98891034389d554f98bf2ac077")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeLoopAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeLoopAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

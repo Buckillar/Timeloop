@@ -8,12 +8,32 @@
                                                                                            
 The readme!
 
+Sound Credits:
+*Menu Track
+    Music from #Uppbeat (free for Creators!):
+    https://uppbeat.io/t/revo/particles
+    License code: 8LLGSNQDUDHC6ZTN
+
+*GamePlay Track
+    Music from #Uppbeat (free for Creators!):
+    https://uppbeat.io/t/roger-gabalda/machinations
+    License code: WFUOPQZXGSLHKRNT
+
+
 Things to be fixed - 
-    * change css for container to jazz it up
-    * change story 
-        ** Generate new images using AI
-    * add music / sound to the game to give atmosphere
+    * Left vent choice not working
+    * proof read story as gramatical errors
     * create different paths (times) to be used based on random load
+    * change story to compensate for new paths
+
+
+12.12.23
+Added React.js credits scene with links to menu
+Corrected issue with the blast door so it goes up all the way as not always hiding
+Added sound effect to menu buttons
+Added music tracks for menu and game
+Added images for game choices
+Updated CSS for game container
 
 11.12.23 
 Added new line of code to make work on decoded website 

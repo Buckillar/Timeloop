@@ -3,10 +3,40 @@
   let collapseAmount = [];  
 // Array for State ie backpack for character   
   let state = {}
+//Sound menu music
+var menuMusic = new Audio("sound/particles-revo-main-version-17674-02-28.mp3");
+  menuMusic.loop = true;
+  menuMusic.onended = function(){
+    menuMusic.play();
+}
+//Sound game music
+var gameMusic = new Audio("sound/machinations-roger-gabalda-main-version-01-35-11007.mp3");
+  gameMusic.loop = true;
+  gameMusic.onended = function(){
+  gameMusic.play();
+}
+// sound effect for hover btn
+var hoverBtnBeep = new Audio("sound/sfx-hover.wav")
+
+const menubuttons = document.querySelectorAll('.intro-btn');
+  menubuttons.forEach(button => {
+    button.addEventListener('mouseenter', playSound);
+  });
+const gamebuttons = document.querySelectorAll('.btn');
+  gamebuttons.forEach(button => {
+    button.addEventListener('mouseenter', playSound);
+  });
+
+function playSound() {
+    hoverBtnBeep.play();
+}
+
 
 // Opening Screen scroll up 
 const togglePage = (goUp) => {
+  
   goUp.preventDefault();
+  menuMusic.play()
   document.querySelector(goUp.target.getAttribute('homepage-btn')).classList.toggle('is-open');
   }
 document.querySelectorAll('[homepage-btn]').forEach(btn => btn.addEventListener('click', togglePage));
@@ -71,7 +101,8 @@ let introStoryPage = document.getElementById("introStory");
 let introPage = document.getElementById("intro");
 let gamePage = document.getElementById("game");
 let winPage = document.getElementById("winScreen");
-let scorePage = document.getElementById("resultsScreen")
+let scorePage = document.getElementById("resultsScreen");
+let creditsPage = document.getElementById("credits");
 
 //Menu to Scores
 let menuToScores = document.getElementById("menu-score-btn")
@@ -90,6 +121,8 @@ let scoresToMenu = document.getElementById("score-menu-btn")
 //menu to IntroStory
 let menuToIntroStory = document.getElementById("menu-introStory-btn")
 menuToIntroStory.addEventListener('click',function menuToIntroStory() {
+    menuMusic.pause();
+    gameMusic.play();
     introStoryPage.style.display = "block";
     menuPage.style.display = "none";
 }, false);
@@ -97,6 +130,8 @@ menuToIntroStory.addEventListener('click',function menuToIntroStory() {
 //menu to Intro
 let menuToIntro = document.getElementById("menu-intro-btn")
 menuToIntro.addEventListener('click',function menuToIntro() {
+    menuMusic.pause();
+    gameMusic.play();    
     introPage.style.display = "block";
     menuPage.style.display = "none";
 }, false);
@@ -113,6 +148,21 @@ let winToScore = document.getElementById("win-score-btn")
 winToScore.addEventListener('click',function winToScore() {
     winPage.style.display = "none";
     scorePage.style.display = "block";
+}, false);
+
+//Menu to Credits
+let menuToCredits = document.getElementById("menu-credits-btn")
+menuToCredits.addEventListener('click',function menuToCredits() {
+    creditsPage.style.display = "block";
+    menuPage.style.display = "none";
+}, false);
+
+//Credits to Menu
+let creditsToMenu = document.getElementById("credits-menu-btn")
+//let creditsToMenu = document.getElementById("credits-menu-btn")
+creditsToMenu.addEventListener('click',function creditsToMenu() {
+    menuPage.style.display = "block";
+    creditsPage.style.display = "none";
 }, false);
 
 
@@ -431,7 +481,7 @@ const textNodes = [
   {
     id: 15,
     text: "You need to get back up to the laboratories, there is a sign with stairs written on it next to some elevators... What a choice!",
-    picture: "images/game10.jpg",
+    picture: "images/game12.jpg",
     options: [
       {
         text: 'Use stairs',
@@ -446,7 +496,7 @@ const textNodes = [
   {
     id: 16,
     text: 'Ahh the safe choice.. as you make your way back up the stairs towards the labs you, a temporal anomaly opens up above you in the ceiling, you hear it crackle and disappear.. <br> Moving through the door to the labs, there is a map on near by wall',
-    picture: "images/game09.jpg",
+    picture: "images/game13.jpg",
     options: [
       {
         text: "Go to Malachi's lab",
@@ -457,7 +507,7 @@ const textNodes = [
   {
     id: 17,
     text: 'Malachi is long gone but the device causing all the issues is here! <br> You can turn it off if you can guess the password to the terminal',
-    picture: "images/game09.jpg",
+    picture: "images/game14.jpg",
     options: [
       {
         text: "Enter MrMittens01!",
@@ -481,7 +531,7 @@ const textNodes = [
   {
     id: 18,
     text: 'Stopping the machine will stop the temporal anomalies and the labs will look like nothing ever happened. No one knows what happened to Malachi but your job is nearly over you just have to press the stop button!',
-    picture: "images/game09.jpg",
+    picture: "images/game14.jpg",
     options: [
       {
         text: "Use the Stop button",
@@ -492,7 +542,7 @@ const textNodes = [
   {
     id: 19,
     text: 'Guessing the password didnt help one bit. Malachi has obviously been keeping up to date with security passwords tips.',
-    picture: "images/game09.jpg",
+    picture: "images/game14.jpg",
     options: [
       {
         text: "Enter MrMittens01!",
@@ -512,7 +562,7 @@ const textNodes = [
   {
     id: 20,
     text: 'You look around and see a clutter of notes but one stands out. The Atari has the key... Time is running out the machine starts hissing..',
-    picture: "images/game09.jpg",
+    picture: "images/game14.jpg",
     options: [
       {
         text: "Enter MrMittens01!",
@@ -528,6 +578,7 @@ const textNodes = [
   {
     id: 801,
     text: 'As you step outside a time vortex above you crackles, you look up to see a flash of lightning and everything goes dark',
+    picture: "images/game801.jpg",
     options: [
       {
         text: 'Enter the darkness!',
@@ -538,6 +589,7 @@ const textNodes = [
   {
     id: 802,
     text: "As you become insistant the door should open from you banging on it, an anomaly opens and sucks you though. The last thing you see is inside of a T-Rex's mouth as he makes you dinner!",
+    picture: "images/game802.jpg",
     options: [
       {
         text: 'Enter the darkness!',
@@ -548,6 +600,7 @@ const textNodes = [
   {
     id: 803,
     text: 'The gap is just too large and you lose your grip, as you fall head first down the vent you realise this was a mistake. The last thing you remember is the crunch.',
+    picture: "images/game803.jpg",
     options: [
       {
         text: 'Enter the darkness!',
@@ -558,6 +611,7 @@ const textNodes = [
   {
     id: 804,
     text: 'Someone forgot their computer based training on health and safety in the work place. Never get into an elevator while the building is being ripped apart by temporal events... The elevator to its credit starts to creep up before an anomaly decends it into darkness with you in it...  ',
+    picture: "images/game804.jpg",
     options: [
       {
         text: 'Enter the darkness!',
@@ -568,6 +622,7 @@ const textNodes = [
   {
     id: 805,
     text: 'Hitting it with a hammer (HIWAH) is one of the more ridiculous things you could of done. You are travelled forward in time to a time Earth no longer exists, just space...',
+    picture: "images/game805.jpg",    
     options: [
       {
         text: 'Enter the darkness!',
@@ -578,6 +633,7 @@ const textNodes = [
   {
     id: 806,
     text: 'Its too late for that! The last you hear is the machine implode sucking you into the black',
+    picture: "images/game806.jpg",
     options: [
       {
         text: 'Enter the darkness!',
@@ -589,6 +645,7 @@ const textNodes = [
   {
     id: 999,
     text: 'Things feel the same but different as your day restarts in this hell!',
+    picture: "images/restartday.jpg",
     options: [
       {
         text: 'Start your day, again!',

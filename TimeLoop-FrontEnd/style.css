@@ -47,25 +47,36 @@ br {
 /* Intro Story Image */ 
 
 #story-image {
-    width:350px;
-    height:350px;
-
+  width: 350px;
+  height: 350px;
 }
 
-#timerbox {
+/* Game Box CSS */ 
+
+#graphic {
+  width:450px; 
+  height:450px;
+  margin:10px;
+}
+
+.timerbox {
     font-family: 'Stick No Bills', sans-serif !important;
     background-color: rgb(6, 20, 8);
     color:#14f734;
     font-size: 2.0em;
     font-weight: bold;
-    width:140px;
     padding: 10px;
     text-align: center;
     border: grey 6px ridge;
-    position: fixed;
-    top: 50px;
-    right: 50px;
+    margin: auto;
+    display: inline-block;
+    width: 180px;
 }
+
+.timerbox-container{
+  display:flex;
+}
+
 #timer {
     font-family: inherit;
 }
@@ -113,7 +124,23 @@ br {
     color: white;
     transition: all 0.5s cubic-bezier(0.000, 0.000, 0.230, 1);    
 }
-/*Win Screen + Score results */
+
+/* Credits screen */
+#credits {
+  overflow: hidden;
+}
+
+
+#credits-container-btn button {
+  position: fixed;
+  border: none;
+  background: transparent;
+  top:50px;
+  right:50px;
+}
+
+
+/* Win Screen + Score results */
 #winScreen {
     font-size: 1.2em;
 }
@@ -127,12 +154,15 @@ br {
 
 /* Game mechanics */
 .container {
-    width: 800px;
+    width: 900px;
     max-width: 80%;
-    background-color: white;
+    max-height: 95%;
+    background-color: black;
+    color: #018dff;
     padding:10px;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
+    font-size: large;
 }
 
 .btn-grid {
@@ -148,11 +178,15 @@ br {
     border-radius: 5px;
     padding: 5px 10px;
     outline: none;
+    color:white;
+    font-size: large;
 }
 
 .btn:hover {
     border-color: #aaa;
 }
+
+/* Homepage CSS */ 
 
 .homepage {
     margin:0px;
@@ -167,7 +201,7 @@ br {
     
     /* Initial transforms */
     opacity: 1;
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     transition: 1.5s ease;
   }
   

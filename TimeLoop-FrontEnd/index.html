@@ -20,6 +20,8 @@
 
     <!-- Javascript -->
     <script type="module" src="game.js"></script>
+    
+    <!-- Title -->
     <title>Looped through</title>
 </head>
 <body>
@@ -63,7 +65,11 @@
         </p> 
         <p class="center-text">
             <button class="intro-btn" id="menu-score-btn" >Top Results</button>
+        </p>
+        <p class="center-text">
+            <button class="intro-btn" id="menu-credits-btn" >Credits</button>
         </p>   
+   
     </div>
 
 
@@ -99,11 +105,15 @@
 
 
     <div id="game" class="container hidden">
-        <div id="timerbox"><span id="timer">03:00</span>
-            <br>
-            <span class="material-symbols-outlined">skull</span> <span id="collapseCount">0</span>
+        <div class="timerbox-container">
+            <div class="timerbox">
+                <span class="material-symbols-outlined">timer</span> <span id="timer">03:00</span> 
+            </div>
+            <div class="timerbox">
+                <span class="material-symbols-outlined">skull</span> <span id="collapseCount">0</span>
+            </div>
         </div>
-        <div style="text-align: center" ><img id="graphic" width="450px" height="450px"></div>
+        <div style="text-align: center" ><img id="graphic" /></div>
         <div id="text">text</div>
         <div id="option-buttons" class="btn-grid">
             <button class="btn">Option 1</button>
@@ -114,9 +124,16 @@
     </div>
 
 
+    <div id="credits" class="hidden">
+        <div id="credits-container-btn"> 
+            <button id="credits-menu-btn"><span class="material-symbols-outlined">cancel</span></button>
+        </div>
+        <div>        
+            <div id="root"></div>
+        </div> 
+    </div>
 
-
-    
-
+    <!-- REACT bundle.js for credits -->    
+    <script src="bundle.js"></script>
 </body>
 </html>

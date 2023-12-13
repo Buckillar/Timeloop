@@ -273,7 +273,7 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'Going through the temporal flux left you feeling fuzzy, with a sense of deja vu. Have you been here before? You look down to the digital watch. Time is counting down! <br> Looking around and getting your bearings you come across your first obstacle an electronically locked door. Looks like it needs some sort of pass-card! <br> You keep looking... Result a second already open door',
+    text: 'Going through the temporal flux left you feeling fuzzy, with a sense of deja vu. Have you been here before? You look down to the digital watch on your wrist. Time is counting down! <br> Looking around and getting your bearings you come across your first obstacle an electronically locked door. Looks like it needs some sort of pass-card! <br> You keep looking... Result a second already open door',
     picture: "images/game01.jpg",
     options: [
       {
@@ -289,7 +289,7 @@ const textNodes = [
   },
   {
     id: 2,
-    text: 'The temporal anomalies are tearing base apart, hoping they are not spreading further you push on. <br> New room, new problems or are there? Actually this room is untouched! You see an electrical control panel on the wall and an unlocked door service corridor. <br> You can turn off the electricity to the corridor but it could make your journey a bit darker!',
+    text: 'The temporal anomalies are tearing the base apart, hoping they are not spreading further, you push on. <br> OK, new room, new problems or are there? Actually this room seems untouched! You see an electrical control panel on the wall and an unlocked door to the service corridor. <br> You can turn off the electricity to the corridor but it could make your journey a bit darker!',
     picture: "images/game02.jpg",
     options: [
       {
@@ -306,7 +306,7 @@ const textNodes = [
   },
   {
     id: 3,
-    text: 'Leaving the electricity on might of been the smart move! You can see clearly along the corridor, BINGO! A fire axe (also known to most as a key to all things called door! You approach the axe and just as you about to take it an anomaly withers it away like its 1000 years old! <br> Just keep moving past some boxes and round the corner! 3 doors are in front of you with convenient signs above each!',
+    text: 'Leaving the electricity on might of been the smart move! You can see clearly along the corridor. BINGO! A fire axe (also known to most as a key to all things called door!), as you approach the axe, to take it, an anomaly withers it away, now its like a 1000 years old and useless! <br>Time to keep moving, past some boxes and round the corner! 3 doors are in front of you with convenient signs above each!',
     picture: "images/game04.jpg",
     options: [
       {
@@ -325,7 +325,7 @@ const textNodes = [
   },
   {
     id: 4,
-    text: "The service corridor is eerily spooky and you can't see a damn thing.. Why did you switch off the electricity?! <br>  As you fumble down the corridor you stumble over some boxes. As you pick yourself up you see a glint of something highlighted by the emergancy lighting. Its an ID card! This might be useful later. You move on and round a corner to 3 doors with convenient signs above each",
+    text: "The service corridor is eerily spooky and you can't see a damn thing.. Why did you switch off the electricity?! <br>  As you fumble down the corridor you stumble over some boxes. As you pick yourself up, you see a glint of something highlighted by the emergancy lighting. Its an ID card! This might be useful later. You move on and round a corner to 3 doors with convenient signs above each",
     picture: "images/game05.jpg",
     options: [
       {
@@ -347,7 +347,7 @@ const textNodes = [
   },
   {
     id: 5,
-    text: 'So... you fancied cleaning something? Get on with the mission! <br> Ok while you are here you have a scout around, nope there is nothing useful, so you have the choice of the two other doors',
+    text: 'So... you fancied cleaning something? Get on with the mission! <br> Ok, while you are here you have a scout around, nope there is nothing useful, so you have the choice of the two other doors',
     picture: "images/game06.jpg",
     options: [
       {
@@ -362,7 +362,7 @@ const textNodes = [
   },
   {
     id: 6,
-    text: 'Entering Lab offices you see can see the mess the time collapses have had. Nothing has stood the test of time except an old relic in the corner Dr Malachi had labelled with a do not touch sticker. Could this be something? <br> You hear strange noises through the open door into main atrium.. Have you time to waste?',
+    text: 'As you enter the Lab offices you see can see the mess the time collapses have had. Nothing has stood the test of time, except an old relic in the corner Dr Malachi had labelled with a do not touch sticker. Could this be something? <br> You hear strange noises through the open door into main atrium.. Have you time to waste?',
     picture: "images/game07.jpg",
     options: [
       {
@@ -434,7 +434,7 @@ const textNodes = [
   },
   {
     id: 11,
-    text: 'Banging on the door was never going to work, an inspection around and you find a man sized air vent! If you were a fictional vest wearing NYPD cop saving a certain skyscraper from some terrorists you would of spotted this first and wouldnt of hurt your hand!',
+    text: 'Banging on the door was never going to work, a quick inspection of your surroundings and you find a man sized air vent! If you were a fictional vest wearing NYPD cop saving a certain skyscraper from some terrorists you would of spotted this first and you wouldnt of hurt your hand!',
     picture: "images/game09.jpg",
     options: [
       {
@@ -467,6 +467,18 @@ const textNodes = [
       }
     ]
   },
+  {
+    id: 13,
+    text: 'You kick open an airvent cover. You are in the labs! Even better there is a map of the labs, time to press on (excuse the pun).',
+    picture: "images/game15.jpg",
+    options: [
+      {
+        text: "Go to Malachi's lab",
+        nextText: 17
+      }
+    ]
+  },
+
   {
     id: 14,
     text: "Climbing down the vent was a bad move, the labs were all on the floor you were on. <br> However the vent exits into some accountant's office. This must of been someone important as there is fake city backdrop!",

@@ -21,11 +21,14 @@ Sound Credits:
 
 
 Things to be fixed - 
-    * Left vent choice not working
-    * proof read story as gramatical errors
     * create different paths (times) to be used based on random load
     * change story to compensate for new paths
 
+
+13.12.23 
+Fixed Left Vent story arch
+Corrected some grammatical errors
+Added documentation for presentation and dev steps
 
 12.12.23
 Added React.js credits scene with links to menu

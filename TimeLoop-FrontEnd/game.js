@@ -459,7 +459,7 @@ const textNodes = [
       },
       {
         text: 'Take the left vent',
-        nextText: 14
+        nextText: 13
       },
       {
         text: 'Climb over the vertical down vent and continue straight',

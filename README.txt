@@ -29,6 +29,7 @@ Things to be fixed -
 Fixed Left Vent story arch
 Corrected some grammatical errors
 Added documentation for presentation and dev steps
+Corrected file names for some images from .JPG to .jpg as ubuntu is case sensitive
 
 12.12.23
 Added React.js credits scene with links to menu
